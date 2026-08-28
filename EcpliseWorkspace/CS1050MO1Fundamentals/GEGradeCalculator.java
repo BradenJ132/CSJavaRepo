@@ -25,8 +25,15 @@ public class GEGradeCalculator {
 		double gradeprojects = 72.3;
 		double finaldemonstation = 91.74;
 	
-		double Percentageweight = gradeclassparticipation * Weight_Class_Participation;
-		System.out.print(Percentageweight);
+		double Percentageweightclassparticipation = gradeclassparticipation * Weight_Class_Participation;
+		double Percentageweightguidedexploration = gradeguidedexploration * Weight_Guided_Explorations;
+		double Percentageweightquizzes = gradequizzes * Weight_Quizzes;
+		double Percentageweightprojects = gradeprojects * Weight_Projects;
+		double Percentageweightfinaldemonstration = finaldemonstation * Weight_Final_Demonstation;
+		
+		double totalweight = Weight_Class_Participation * Weight_Guided_Explorations * Weight_Quizzes * Weight_Projects * Weight_Final_Demonstation;
+ 
+	 System.out.print(totalweight);
 	}
 
 }
