@@ -21,19 +21,22 @@ public class GEGradeCalculator {
 		final double Weight_Quizzes = 25;
 		final double Weight_Projects = 20;
 		final double Weight_Final_Demonstation = 20;
+		
 		//this is defining all of the grades as variables
 		double gradeclassparticipation = 79;
 		double gradeguidedexploration = 85.3;
 		double gradequizzes = 91.25;
 		double gradeprojects = 72.325;
 		double gradefinaldemonstation = 91.74;
-	//this is multiplying the grades and weights to create another variable which is named the percentage weight.
+
+		//this is multiplying the grades and weights to create another variable which is named the percentage weight.
 		double Percentageweightclassparticipation = gradeclassparticipation * Weight_Class_Participation;
 		double Percentageweightguidedexploration = gradeguidedexploration * Weight_Guided_Explorations;
 		double Percentageweightquizzes = gradequizzes * Weight_Quizzes;
 		double Percentageweightprojects = gradeprojects * Weight_Projects;
 		double Percentageweightfinaldemonstration = gradefinaldemonstation * Weight_Final_Demonstation;
-		// this adds all of the weights together 
+		
+		im// this adds all of the weights together 
 		double totalweight = Weight_Class_Participation + Weight_Guided_Explorations + Weight_Quizzes + Weight_Projects + Weight_Final_Demonstation;
 		
 		// this adds all of the percentage weights together into another variable named total percentage weight 
