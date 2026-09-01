@@ -12,11 +12,15 @@
 	//CS1050 
 	//GEMO1
 	//this program calculates a final grade for this class based on the category weights.
-	
-public class GEGradeCalculator {
+
+
+
+	public class GEGradeCalculator {
 	public static void main(String[] args) {
+	
 		//this defines each weight as a constant 
-		final double Weight_Class_Participation = 15;
+	
+	final double Weight_Class_Participation = 15;
 		final double Weight_Guided_Explorations = 20;
 		final double Weight_Quizzes = 25;
 		final double Weight_Projects = 20;
@@ -36,7 +40,7 @@ public class GEGradeCalculator {
 		double Percentageweightprojects = gradeprojects * Weight_Projects;
 		double Percentageweightfinaldemonstration = gradefinaldemonstation * Weight_Final_Demonstation;
 		
-		im// this adds all of the weights together 
+		// this adds all of the weights together 
 		double totalweight = Weight_Class_Participation + Weight_Guided_Explorations + Weight_Quizzes + Weight_Projects + Weight_Final_Demonstation;
 		
 		// this adds all of the percentage weights together into another variable named total percentage weight 
@@ -66,6 +70,7 @@ public class GEGradeCalculator {
 		
 		// this prints out the final grade after all of the calculations and says final grade: (final grade)
 		System.out.println("Final Grade: " +  finalgrade); 
+	
 	}
 
 }
