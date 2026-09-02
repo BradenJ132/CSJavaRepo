@@ -41,4 +41,3 @@ if Operation == "divide":
          print(f"the answer is " + str (I1 / I2))
 
 print("have a nice day braden")
-    
