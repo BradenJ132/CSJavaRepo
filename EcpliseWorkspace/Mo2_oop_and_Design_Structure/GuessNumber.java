@@ -2,8 +2,9 @@
  * This program takes user input to see if they can guess the 
  * random number generated. Add comments to explain the code.
  */
-
+//import java scanner
 import java.util.Scanner;
+
 
 public class GuessNumber
 {
@@ -37,6 +38,7 @@ public class GuessNumber
 				System.out.println("Your guess is too low");
 			}
 		}
-
+//keyboard input must be closed.
+		keyboardInput = keyboardInput.nextdouble()
 	}//end of main
 }//end of class
