@@ -1,46 +1,39 @@
-#import pygame  
 import pygame
-from pygame import key
-
-#ininitializes pygame
-pygame.init()
-#creates window
-screen = pygame.display.set_mode((1920, 1080))
-#import the image/ converts it into a surface
-frogimg = pygame.image.load("Frogimg.gif").convert()
-#this is supposed to work but it deletes any color that is white 
-frogimg.set_colorkey((255, 255, 255))
+import sys 
+x = 640
+y = 480
+class game:
+    def __init__(self):
 
 
-#this says when it is running x = 0 
-#the clock is defining the tick rate/fps
-#i will likely adjust with delta time later
-clock = pygame.time.Clock()
-x = 0
-y = 0
-running = True 
+        pygame.init()
 
-# while the program is running fill the window with black and place the surface/frog as that point
-#also while it is running, move in the positive x direction 0.1 per tick 
-screen.fill((0, 0, 0))
-screen.blit(frogimg,(x, y))
+        pygame.display.set_caption("Platformer game")
 
-while running:
-    keys = pygame.key.get_pressed
-    if keys == pygame[key_w]:
-            x += 3
+        self.screen = pygame.display.set_mode((640, 480))
 
-for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+        self.clock = pygame.time.Clock()
+        self.frogimg = pygame.image.load("Frogimg.gif").convert_alpha()
+    
+        
+        
 
-
-
-#this is saying when the event type/ x key i beilive it is, is pressed then quit the game/turn running to false
     
 
-# this actually displays the surfaces on the screen
-pygame.display.flip()
-# this defines the fps/tickrate
-clock.tick(60) 
-pygame.quit()
+
+    def run(self):
+        running = True
+        while running:
+            self.screen.blit(self.frogimg, (x - 320, y - 240))
+
+            #gets user input so any input coming from the keyboard, files, or windows in general must have this command
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit() #this closes pygame. (both commands are needed)
+                    sys.exit() #this codes the X in the top right to close the window.
+                    
+
+            pygame.display.flip()
+            self.clock.tick(60)  
+
+game().run()
