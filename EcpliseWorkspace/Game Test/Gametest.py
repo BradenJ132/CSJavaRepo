@@ -1,7 +1,5 @@
 import pygame
 import sys 
-x = 640
-y = 480
 class game:
     def __init__(self):
 
@@ -15,16 +13,16 @@ class game:
         self.clock = pygame.time.Clock()
         self.frogimg = pygame.image.load("Frogimg.gif").convert_alpha()
     
-        
-        
+        self.frogimg_pos = [100, 200]
 
-    
+
+     
 
 
     def run(self):
         running = True
         while running:
-            self.screen.blit(self.frogimg, (x - 320, y - 240))
+            self.screen.blit(self.frogimg, self.frogimg_pos)
 
             #gets user input so any input coming from the keyboard, files, or windows in general must have this command
             for event in pygame.event.get():
