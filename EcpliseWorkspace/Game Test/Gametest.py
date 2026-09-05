@@ -9,10 +9,10 @@ class game:
         pygame.display.set_caption("Platformer game")
 
         self.screen = pygame.display.set_mode((640, 480))
-
+        
         self.clock = pygame.time.Clock()
         self.frogimg = pygame.image.load("Frogimg.gif").convert_alpha()
-    
+        self.screen.fill("black")
         self.frogimg_pos = [100, 200]
         self.ymovement = [False, False]
         self.xmovement = [False, False]
