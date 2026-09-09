@@ -1,6 +1,6 @@
 
 import java.util.Scanner;
-public class L06MathCharsStrings {
+public class MadLib {
 
 	public static void main(String[] args) {
 		Scanner input = new Scanner(System.in);
@@ -27,8 +27,8 @@ public class L06MathCharsStrings {
 		
 		char lastnameinitial = lastname.charAt(0);
 		
-		System.out.print("on a lonely night " + firstname  + lastnameinitial  + "was " 
-		+  verb + "around " + place + "." + pronoun + "liked" + adjective + noun + "very much"  );
+		System.out.print("on a lonely night " + firstname + " "  + lastnameinitial + ". " + "was " 
+		+  verb + " " + "around " + place + ". " +  pronoun + " "+ "liked " + adjective + " " + noun + " very much"  );
 input.close();
 	}
 }
