@@ -3,6 +3,26 @@ public class GEM02_Grade_Calc_Lab {
 
 	public static void main(String[] args) {
 	
+		//defining all weights as constants 
+		final double WEIGHT_CLASS_PARTICIPATION = 15;
+		final double WEIGHT_GUIDED_EXPLORATIONS = 20;
+		final double WEIGHT_QUIZZES = 25;
+		final double WEIGHT_PROJECTS = 20;
+		final double WEIGHT_FINAL_DEMONSTRATION = 20;
+		
+		
+		
+		//prints out all category weights 
+		System.out.println(" ");
+		System.out.println("Grade Category Weights: ");
+		System.out.println(" ");
+		System.out.println("Class Participation Weight = 15");
+		System.out.println("Guided Explorations Weight  = 20");
+		System.out.println("Quizzes Weight = 25");
+		System.out.println("Projects Weight  = 20");
+		System.out.println("Final Demonstration Weight = 20");
+		
+		System.out.println(" ");
 		//requests first and last name then stores it as a variable 
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter your First and last name: ");
@@ -28,12 +48,7 @@ public class GEM02_Grade_Calc_Lab {
 		System.out.print("Enter your final demonstation grade: ");
 		double gradefinaldemonstration = input.nextDouble();
 		
-		//defining all weights as constants 
-		final double WEIGHT_CLASS_PARTICIPATION = 15;
-		final double WEIGHT_GUIDED_EXPLORATIONS = 20;
-		final double WEIGHT_QUIZZES = 25;
-		final double WEIGHT_PROJECTS = 20;
-		final double WEIGHT_FINAL_DEMONSTRATION = 20;
+		
 		
 		//multiplying weights and grades to create a variable named percentageweight
 		double percentageweightclassparticipation = gradeclassparticipation * WEIGHT_CLASS_PARTICIPATION;
@@ -41,6 +56,7 @@ public class GEM02_Grade_Calc_Lab {
 		double percentageweightquizzes = gradequizzes * WEIGHT_QUIZZES;
 		double percentageweightprojects = gradeprojects * WEIGHT_PROJECTS;
 		double percentageweightfinaldemonstration = gradefinaldemonstration * WEIGHT_FINAL_DEMONSTRATION;
+		
 		
 		// adds all of the weights together 
 		double totalweight =  WEIGHT_CLASS_PARTICIPATION + WEIGHT_GUIDED_EXPLORATIONS + WEIGHT_QUIZZES + WEIGHT_PROJECTS + WEIGHT_FINAL_DEMONSTRATION;
@@ -51,11 +67,11 @@ public class GEM02_Grade_Calc_Lab {
 	
 		// this divides the total percentage weight by the total weight to give the final grade 
 		double finalgrade = totalpercentageweight / totalweight;
-		
+		System.out.println(" ");
 		System.out.print(fullname + ", your final grade is " + finalgrade);
 		
 			
-		//the code until input close is a multiway if/else statement that determines the letter grade based on the calculated final grade
+		//the code until input close is a multi-way if/else statement that determines the letter grade based on the calculated final grade
 			if (finalgrade >= 90.00)
 				{
 			 System.out.print(" that's an A");
