@@ -10,8 +10,6 @@ public class GEM02_Grade_Calc_Lab {
 		final double WEIGHT_PROJECTS = 20;
 		final double WEIGHT_FINAL_DEMONSTRATION = 20;
 		
-		
-		
 		//prints out all category weights 
 		System.out.println(" ");
 		System.out.println("Grade Category Weights: ");
@@ -22,7 +20,7 @@ public class GEM02_Grade_Calc_Lab {
 		System.out.println("Projects Weight  = 20");
 		System.out.println("Final Demonstration Weight = 20");
 		
-		System.out.println(" ");
+		System.out.print(" ");
 		//requests first and last name then stores it as a variable 
 		Scanner input = new Scanner(System.in);
 		System.out.print("Enter your First and last name: ");
