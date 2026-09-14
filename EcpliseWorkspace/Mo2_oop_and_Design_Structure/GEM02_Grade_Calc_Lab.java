@@ -94,7 +94,6 @@ public class GEM02_Grade_Calc_Lab {
 			{
 				System.out.print(" that's a F");
 			}
-			
 			//closes input for Scanner
 			input.close();
 	}
