@@ -10,12 +10,20 @@ class game:
 
         pygame.display.set_caption("Platformer game")
 
+<<<<<<< HEAD
         self.screen = pygame.display.set_mode((1920, 1080)) #og was 640 by 480
 
         self.clock = pygame.time.Clock()
         self.frogimg = pygame.image.load("Frogimg.gif").convert_alpha()
         self.frogimg.set_colorkey((255, 255, 255))
    # this is setting the default movement and posoition of the surface  
+=======
+        self.screen = pygame.display.set_mode((640, 480))
+        
+        self.clock = pygame.time.Clock()
+        self.frogimg = pygame.image.load("Frogimg.gif").convert_alpha()
+        self.screen.fill("black")
+>>>>>>> 82674c53368bdf1267367fb8d316996646d75801
         self.frogimg_pos = [100, 200]
         self.ymovement = [False, False]
         self.xmovement = [False, False]
