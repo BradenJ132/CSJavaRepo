@@ -6,7 +6,7 @@ public class CrapsGame
 	public static void main(String[] args)
 	{
 	Scanner input = new Scanner(System.in);
-	
+	int coinamount = 80;
 	String rollagain = "r";
 	
 	while (rollagain.equals("r")) {
@@ -19,6 +19,7 @@ public class CrapsGame
 	if (d1 + d2 == 7 || d1 + d2 == 11)
 	{
 	System.out.println("YOU WIN!");
+	System.out.println("you now have: " + coinamount * 2 + " coins");
 	}
 
 		
@@ -27,10 +28,13 @@ public class CrapsGame
 	if (d1 == 6 && d2 == 6)
 	{
 		System.out.println("JACKPOT!!!!");
+		System.out.println("you now have: " + coinamount * 10 + " coins");
 	}
 	else
 	{
 		System.out.println("DOUBLES! YOU WIN!");
+		System.out.println("you now have: " + coinamount * 3 + " coins");
+		
 	}
 		
 	}
@@ -38,9 +42,10 @@ public class CrapsGame
 else
 {
 	System.out.println("you lose :{" );
+	System.out.println("you now have: " + coinamount / 2 + " coins");
 }
 	System.out.println("");
-System.out.println("Roll Again(r)");
+System.out.println("Roll Again?(r)");
 
 rollagain = input.nextLine();
 		
