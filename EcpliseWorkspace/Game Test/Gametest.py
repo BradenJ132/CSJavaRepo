@@ -1,5 +1,7 @@
 import pygame
 import sys 
+from Scripts.entities import physicsentity
+
 class game:
     def __init__(self):
         self.facing_right = False
@@ -20,7 +22,7 @@ class game:
 
 #this is simply a rectangle that is created on the screen (x, y postion then widght and height)
         self.collision_area = pygame.Rect(200, 200, 1000, 1000)
-
+        
 
 #this sets a constant for the movement speed 
         self.movement_speed = 5
@@ -28,6 +30,7 @@ class game:
     def run(self):
         running = True
         while running:
+            
             Current_image = pygame.transform.flip(self.frogimg, True, False)
 #the first part of the code say, get the position then you are saying get the ymovement based on the operation. it basically is stating 
 # if the first value[1] is greater than [0] then move down because postive y is in the downwards direction and if [1]<[0] move up
