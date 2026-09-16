@@ -29,7 +29,6 @@ public class GEM02_Grade_Calc_Lab {
 		//requests class participation grade then stores it as a variable 
 		System.out.print("Enter your class participation grade: ");
 		double gradeclassparticipation = input.nextDouble();
-		
 		//requests guided exploration grade then stores it as a variable
 		System.out.print("Enter your guided explorations grade: ");
 		double gradeguidedexplorations = input.nextDouble();
