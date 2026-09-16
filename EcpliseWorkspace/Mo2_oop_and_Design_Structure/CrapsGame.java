@@ -81,6 +81,8 @@ else
 System.out.println("Roll Again?(r) or cashout?(c)");
 rollagain = input.next();
 
+
+
 if (rollagain.equals("c"))
 {	
 	System.out.println("You cashed out with " + coinamount + " coins!");
@@ -92,7 +94,7 @@ if (rollagain.equals("c"))
 	{
 		if (name.equals("parker"))
 	{
-		System.out.println("would you like to buy Child porn?(Y/N)");
+		System.out.println("would you like to buy CP?(Y/N)");
 		String CP = input.next();
 		if (CP.equals("Y"))
 		{
