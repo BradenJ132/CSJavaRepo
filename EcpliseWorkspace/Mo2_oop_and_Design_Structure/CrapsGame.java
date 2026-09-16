@@ -7,11 +7,17 @@ public class CrapsGame
 	{
 	//sets scanner input	
 	Scanner input = new Scanner(System.in);
+	System.out.print("what is your name?");
+	String name = input.nextLine();
+	
+	
+	
 	//sets inital coin amount
 	double coinamount = 80;
 	String rollagain = "r";
-
-	while (rollagain.equals("r")) {
+	System.out.println("Hello " + name + " you have 80 coins! spend it wisely ;)");
+	while (rollagain.equals("r")) 
+	{
 		//generates random number between 1 and 6 for dice 1 and dice 2 
 		System.out.print("Bet Amount: ");
 		double betamount = input.nextDouble();
@@ -68,17 +74,35 @@ else
 }
 	if (coinamount <= 0)
 {
-	System.out.print("you are poor");
+	System.out.println("you are poor");
 	break;
 }
-	
-	
 	System.out.println("");
-System.out.println("Roll Again?(r)");
-
+System.out.println("Roll Again?(r) or cashout?(c)");
 rollagain = input.next();
 
+if (rollagain.equals("c"))
+{	
+	System.out.println("You cashed out with " + coinamount + " coins!");
+    break;
+}
 //end of main
+	}
+	if (coinamount > 0)
+	{
+		if (name.equals("parker"))
+	{
+		System.out.println("would you like to buy Child porn?(Y/N)");
+		String CP = input.next();
+		if (CP.equals("Y"))
+		{
+			System.out.println("you bought " + coinamount + " terabtyes of CP");
+		}
+		else 
+		{
+			System.out.println("i see you already have enough");
+		}
+	}
 	}
 	input.close();		
 
