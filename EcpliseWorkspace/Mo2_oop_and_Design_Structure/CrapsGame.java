@@ -98,7 +98,7 @@ if (rollagain.equals("c"))
 		String CP = input.next();
 		if (CP.equals("Y"))
 		{
-			System.out.println("you bought " + coinamount + " terabtyes of CP");
+			System.out.println("you bought " + (int) coinamount * 10000 + " terabtyes of CP!!!!");
 		}
 		else 
 		{
