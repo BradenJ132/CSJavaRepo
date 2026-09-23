@@ -21,7 +21,8 @@ public class CrapsGame
 		//generates random number between 1 and 6 for dice 1 and dice 2 
 		System.out.print("Bet Amount: ");
 		double betamount = input.nextDouble();
-		
+	
+
 		
 while (betamount > coinamount)
 {
@@ -81,6 +82,11 @@ else
 System.out.println("Roll Again?(r) or cashout?(c)");
 rollagain = input.next();
 
+while (!rollagain.equals("r") && !rollagain.equals("c"))
+{
+	System.out.println("please choose to Rollagain(r) or Cashout(c)");
+	rollagain = input.nextLine();
+}
 
 
 if (rollagain.equals("c"))
