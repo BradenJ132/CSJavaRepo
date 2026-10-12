@@ -20,7 +20,7 @@ public class fluidsimulation
 		double fGravity = -9.81;
 		double x_Particle_Velocity = 0;
 		double y_Particle_Velocity = 0;
-		double y_particlePosition = 0;
+		double y_particlePosition;
 		double x_particlePosition = 0;
 		double damping = 0.5;
 		
