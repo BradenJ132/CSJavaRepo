@@ -20,7 +20,7 @@ public class SumNumbers_L12
 	input.close();
 	
 	}
-		
+		do 
 	//this is a method that does summation, i thought it was factorial initialy but that is differnt(multply every
 	//number below it)
 	//this creates the method (sumnumber)
