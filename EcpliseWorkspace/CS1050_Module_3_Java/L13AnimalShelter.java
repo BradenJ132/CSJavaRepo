@@ -11,15 +11,26 @@ public class L13AnimalShelter
 		System.out.println("Would you like to see a summary of the program? (yes/no)");
 		String summarydecision = input.nextLine();
 		summarydisplay(summarydecision);
+		//end of program summary
+		
 		System.out.println(" ");
+		
+		//calls for animalamountentry
 		int numberAnimals = animalAmountEntry(input);
+		//end 
+	
+		//calls animal name 
 		String animalNames [] = new String [numberAnimals];
-		//calls animal name weight and food.
 		animalnameentry(input, animalNames);
+		//end
+		
 		input.nextLine();
+		//animal weight entry
 		double animalweight = animalweightentry(input);
+		//end 
+			
 		double dailyfoodentry = animaldailyfoodentry(input);
-		//checks for correct info
+		
 		double weeklyfood = animalweeklyfood(dailyfoodentry);
 		String classification = weightclass(animalweight);
 		
