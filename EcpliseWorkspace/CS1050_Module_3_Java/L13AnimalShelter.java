@@ -32,6 +32,8 @@ public class L13AnimalShelter
 		
 		double weeklyFood = animalWeeklyFood(dailyFoodAmounts);
 		
+		String animalWeightCategory [] = new String [numberAnimals];
+		weightClass(animalWeightCategory, animalWeights, input);
 input.close();
 	
 	
@@ -137,28 +139,28 @@ input.close();
 	}
 	//end of week food calc method
 	
-	public static String weightclass(double animalweight)
+	public static void weightClass(String animalWeightCategory [], double animalWeights [], Scanner input)
 	{
-	String classification = ("");
-		if (animalweight < 20.00)
+		for (int index = 0; index < animalWeights.length; index++ )
 		{
-			classification = ("small");
+		if (animalWeights[index] < 20.00)
+		{
+			animalWeightCategory[index] = ("small");
 		}
-		else if (animalweight >= 20 && animalweight < 50)
+		else if (animalWeights[index] >= 20 && animalWeights[index] < 50)
 		{
-			classification = ("medium");
+			animalWeightCategory[index] = ("medium");
 		}
-		else if (animalweight >= 50 && animalweight < 100)
+		else if (animalWeights[index] >= 50 && animalWeights[index] < 100)
 		{
-			classification = ("large");
+			animalWeightCategory[index] = ("large");
 		}
 		else 
 		{
-			classification = ("Extra Large");
+			animalWeightCategory[index] = ("Extra Large");
 		}
-		return classification;
 	}
-
+	}
 
 public static double checkValidDouble(double checkVariable, Scanner input)
 {
