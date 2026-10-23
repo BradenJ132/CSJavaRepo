@@ -8,9 +8,8 @@ public class L13AnimalShelter
 		Scanner input = new Scanner(System.in);
 		
 		// runs summary displayer/query
-		System.out.println("Would you like to see a summary of the program? (yes/no)");
-		String summarydecision = input.nextLine();
-		summarydisplay(summarydecision);
+	
+		summarydisplay(input);
 		//end of program summary
 		
 		System.out.println(" ");
@@ -21,18 +20,17 @@ public class L13AnimalShelter
 	
 		//calls animal name 
 		String animalNames [] = new String [numberAnimals];
-		animalnameentry(input, animalNames);
+		animalNameEntry(input, animalNames);
 		//end
 		
-		input.nextLine();
 		//animal weight entry
-		double animalweight = animalweightentry(input);
+		double animalWeights [] = new double[numberAnimals];
+		animalweightentry(input, animalWeights);
 		//end 
-			
-		double dailyfoodentry = animaldailyfoodentry(input);
+		double dailyFoodAmounts [] = new double [numberAnimals];	
+		animalDailyFoodEntry(dailyFoodAmounts, input);
 		
-		double weeklyfood = animalweeklyfood(dailyfoodentry);
-		String classification = weightclass(animalweight);
+		double weeklyFood = animalWeeklyFood(dailyFoodAmounts);
 		
 input.close();
 	
@@ -41,15 +39,35 @@ input.close();
 //main method end 
 	
 	//summary display method
-	public static void summarydisplay(String currentsummarydecision )
+	public static void summarydisplay(Scanner input)
 	{
-		if (currentsummarydecision.equals("yes"))
+	System.out.println("Would you like to see a summary of the program? (yes/no)");
+	String summarydecision = input.nextLine();
+	
+	boolean correctDecision = false;
+	if (summarydecision.equals("yes") || summarydecision.equals("no"))
+	{
+		correctDecision = true;
+	}
+	while (correctDecision == false)
+	{
+		System.out.println("Please enter Yes or no");
+		summarydecision = input.nextLine();
+		if (summarydecision.equals ("yes") || summarydecision.equals ("no"))
+{
+	correctDecision = true;
+}
+	}
+		if (summarydecision.equals("yes"))
 		{
 			System.out.println("");
 			System.out.println("Animal Rescue Analysis Summary:");
 			System.out.println("");
-			System.out.println("this program will ask you the name, weight, and daily food amount for each animal");
-			System.out.println("Then the program will analyze the information inputed and will calculate each animals weekly food amount and catgorize animal by weight");
+			System.out.println("this program will ask you the name, weight, and daily food amount for the amount of animals");
+			System.out.println("Then the program will analyze the information inputed and will calculate each animals weekly food amount,"
+					+ " catgorize animal by weight, calculate the ");
+					 System.out.println("average daily food amount, and display any animals who eat as much or more than the average daily");
+					 
 		}
 		else
 		{
@@ -60,7 +78,7 @@ input.close();
 	//end of summary display method
 	
 	//name entry method
-	public static void animalnameentry(Scanner input, String currentAnimalNames[])
+	public static void animalNameEntry(Scanner input, String currentAnimalNames[])
 	{
 		
 		for (int index = 0; index < currentAnimalNames.length; index++)
@@ -76,46 +94,46 @@ input.close();
 	//end animal entry method
 	
 	//animal weight entry method
-	public static double animalweightentry(Scanner input)
+	public static void animalweightentry(Scanner input, double currentAnimalWeights[])
 	{
-		
-		System.out.println("");
-		System.out.println("please enter Animal's weight(pounds): ");
-		double currentweight = input.nextDouble();
-		while (currentweight < 1)
+		for (int index = 0; index < currentAnimalWeights.length; index++)
 		{
-			System.out.println("invalid entry");
-			System.out.println("please enter Animal's weight(pounds): ");
-			currentweight = input.nextDouble();
+			int printIndex = index + 1;
+		System.out.println("");
+		System.out.println("please enter Animal " + printIndex + "'s weight(pounds): ");
+		double checkInput = input.nextDouble();
+		checkInput = checkValidDouble(checkInput, input);
+		currentAnimalWeights[index] = checkInput;
 		}
-		
-		return currentweight;
 	}
 	//end of weight entry method
 	//start of daily food entry method
-	public static double animaldailyfoodentry(Scanner input)
+	public static void animalDailyFoodEntry(double currentDailyFoodAmount[], Scanner input)
 	{
+		for (int index = 0; index < currentDailyFoodAmount.length; index++)
+		{
+		int printIndex = index + 1;
+		System.out.println("");
+		System.out.println("please enter Animal "  + printIndex + "'s daily food amount ");
+		double checkValue = input.nextDouble();
+		checkValidDouble(checkValue, input);
+		currentDailyFoodAmount[index] = checkValue;
 		
-		System.out.print("");
-		System.out.println("please enter Animal's daily food amount(cups): ");
-		double currentfoodentry = input.nextDouble();
-		if (currentfoodentry < 1)
-		{
-			checkvalidDouble(currentfoodentry, input);
-		}
-		else
-		{
-			
 		}
 		
-		return currentfoodentry;
+		
+		
 	}
 	//end of food entry method
 	//weekly food calculation method
-	public static double animalweeklyfood(double dailyfoodentry)
+	public static double animalWeeklyFood(double currentDailyFoodAmounts[])
 	{
-		double weeklyfood = dailyfoodentry * 7; 
-		return weeklyfood;
+		double total = 0;
+		for (int index = 0; index < currentDailyFoodAmounts.length; index++)
+			{
+			total = total + currentDailyFoodAmounts[index];
+			}
+		return total;
 	}
 	//end of week food calc method
 	
@@ -142,10 +160,10 @@ input.close();
 	}
 
 
-public static double checkvalidDouble(double checkVariable, Scanner input)
+public static double checkValidDouble(double checkVariable, Scanner input)
 {
 	boolean validInput;
-	if (checkVariable >= 1)
+	if (checkVariable > 0)
 	{
 		validInput = true;
 	}
@@ -159,7 +177,7 @@ public static double checkvalidDouble(double checkVariable, Scanner input)
 		System.out.print("please enter valid input: ");
 		checkVariable = input.nextDouble();
 		
-		if (checkVariable < 1)
+		if (checkVariable <= 0)
 		{
 			
 		}
@@ -173,7 +191,7 @@ public static double checkvalidDouble(double checkVariable, Scanner input)
 public static int checkvalidInteger(int checkVariable, Scanner input)
 {
 	boolean validInput;
-	if (checkVariable >= 1)
+	if (checkVariable > 0)
 	{
 		validInput = true;
 	}
@@ -187,7 +205,7 @@ public static int checkvalidInteger(int checkVariable, Scanner input)
 		System.out.print("please enter valid input: ");
 		checkVariable = input.nextInt();
 		
-		if (checkVariable < 1)
+		if (checkVariable <= 0)
 		{
 			
 		}
@@ -202,7 +220,7 @@ public static int animalAmountEntry(Scanner input)
 {
 System.out.println("how many animals are in the shelter?");
 	int numberAnimals = input.nextInt();
-	checkvalidInteger(numberAnimals, input);
+	numberAnimals = checkvalidInteger(numberAnimals, input);
 	input.nextLine();
 	return numberAnimals;
 
