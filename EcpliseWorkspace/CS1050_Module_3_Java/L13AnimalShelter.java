@@ -30,16 +30,42 @@ public class L13AnimalShelter
 		double dailyFoodAmounts [] = new double [numberAnimals];	
 		animalDailyFoodEntry(dailyFoodAmounts, input);
 		
-		double weeklyFood = animalWeeklyFood(dailyFoodAmounts);
+		double individualWeeklyFood[] = new double [numberAnimals];
+		individualAnimalWeeklyFood(dailyFoodAmounts, individualWeeklyFood);
 		
 		String animalWeightCategory [] = new String [numberAnimals];
 		weightClass(animalWeightCategory, animalWeights, input);
-input.close();
+		animalInfoPrint(animalNames, animalWeights, animalWeightCategory, dailyFoodAmounts, individualWeeklyFood);
+		
+		totalWeeklyFood(individualWeeklyFood);
+		input.close();
 	
 	
 	}
 //main method end 
+	public static void totalWeeklyFood(double weeklyFood[])
+	{
+		double total = 0;
+		for(int index = 0; index < weeklyFood.length; index++)
+		{
+			total = total + weeklyFood[index];
+		}
+		System.out.print("The total weekly food is" + total + " cups");
+	}
 	
+	public static void animalInfoPrint(String animalNames[], double animalWeights[], String animalWeightCategory[], double dailyFoodAmounts[], double individualWeeklyFood[])
+	{
+		for( int index = 0; index < animalNames.length; index++)
+		{
+			System.out.println(animalNames[index]);
+			System.out.println(animalWeights[index]);
+			System.out.println(animalWeightCategory[index]);
+			System.out.println(dailyFoodAmounts[index]);
+			System.out.println(individualWeeklyFood[index]);
+			
+		}
+		
+	}
 	//summary display method
 	public static void summarydisplay(Scanner input)
 	{
@@ -118,7 +144,7 @@ input.close();
 		System.out.println("");
 		System.out.println("please enter Animal "  + printIndex + "'s daily food amount ");
 		double checkValue = input.nextDouble();
-		checkValidDouble(checkValue, input);
+		checkValue = checkValidDouble(checkValue, input);
 		currentDailyFoodAmount[index] = checkValue;
 		
 		}
@@ -128,14 +154,14 @@ input.close();
 	}
 	//end of food entry method
 	//weekly food calculation method
-	public static double animalWeeklyFood(double currentDailyFoodAmounts[])
+	public static void individualAnimalWeeklyFood(double currentDailyFoodAmounts[], double WeeklyFood[])
 	{
-		double total = 0;
+		
 		for (int index = 0; index < currentDailyFoodAmounts.length; index++)
 			{
-			total = total + currentDailyFoodAmounts[index];
+			WeeklyFood[index] = currentDailyFoodAmounts[index] * 7;
 			}
-		return total;
+		
 	}
 	//end of week food calc method
 	
@@ -225,8 +251,5 @@ System.out.println("how many animals are in the shelter?");
 	numberAnimals = checkvalidInteger(numberAnimals, input);
 	input.nextLine();
 	return numberAnimals;
-
-
-	
 }
 }
