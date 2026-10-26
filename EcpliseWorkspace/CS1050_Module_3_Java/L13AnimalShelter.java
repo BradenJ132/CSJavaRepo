@@ -38,11 +38,36 @@ public class L13AnimalShelter
 		animalInfoPrint(animalNames, animalWeights, animalWeightCategory, dailyFoodAmounts, individualWeeklyFood);
 		
 		totalWeeklyFood(individualWeeklyFood);
+		double dailyFoodAverage = averageDailyFood(dailyFoodAmounts);
+		displayAboveAverage(animalNames, dailyFoodAmounts, dailyFoodAverage);
+		
 		input.close();
 	
 	
 	}
 //main method end 
+	public static void displayAboveAverage(String animalNames[], double dailyFoodAmounts[], double dailyFoodAverage)
+	{
+		for(int index = 0; index < animalNames.length; index++)
+		{
+			if (dailyFoodAmounts[index] >= dailyFoodAverage)
+					{
+				System.out.println(animalNames[index]);
+					}
+		}
+	}
+	public static double averageDailyFood(double dailyFoodAmounts [])
+	{
+		double total = 0;
+		for (int index = 0; index < dailyFoodAmounts.length; index++)
+		{
+			total = total + dailyFoodAmounts[index];
+		}
+		double average = total / dailyFoodAmounts.length;
+		System.out.println("the average daily Food is " + average + " cups");
+		return average;
+		
+	}
 	public static void totalWeeklyFood(double weeklyFood[])
 	{
 		double total = 0;
@@ -50,7 +75,7 @@ public class L13AnimalShelter
 		{
 			total = total + weeklyFood[index];
 		}
-		System.out.print("The total weekly food is" + total + " cups");
+		System.out.print("The total weekly food is " + total + " cups");
 	}
 	
 	public static void animalInfoPrint(String animalNames[], double animalWeights[], String animalWeightCategory[], double dailyFoodAmounts[], double individualWeeklyFood[])
