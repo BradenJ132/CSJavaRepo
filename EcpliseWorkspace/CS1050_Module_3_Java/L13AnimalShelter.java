@@ -7,8 +7,7 @@ public class L13AnimalShelter
 		//initialized input object
 		Scanner input = new Scanner(System.in);
 		
-		// runs summary displayer/query
-	
+		// runs summary display/query
 		summarydisplay(input);
 		//end of program summary
 		System.out.println(" ");
@@ -141,7 +140,7 @@ public class L13AnimalShelter
 		currentAnimalNames[index] = input.nextLine();
 		}
 		
-		
+		System.out.print("");
 	}
 	//end animal entry method
 	
