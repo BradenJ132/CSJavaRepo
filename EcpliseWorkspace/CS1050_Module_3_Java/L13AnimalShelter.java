@@ -11,7 +11,6 @@ public class L13AnimalShelter
 	
 		summarydisplay(input);
 		//end of program summary
-		
 		System.out.println(" ");
 		
 		//calls for animalamountentry
@@ -73,7 +72,7 @@ public class L13AnimalShelter
 		double total = 0;
 		for(int index = 0; index < weeklyFood.length; index++)
 		{
-			total = total + weeklyFood[index];
+			total += weeklyFood[index];
 		}
 		System.out.print("The total weekly food is " + total + " cups");
 	}
