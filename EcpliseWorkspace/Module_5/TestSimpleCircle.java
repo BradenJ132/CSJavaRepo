@@ -1,7 +1,6 @@
 
 public class TestSimpleCircle
 {
-
 	 public static void main(String[] args) {
 		    // Create a circle with radius 1
 		    SimpleCircle circle1 = new SimpleCircle();
@@ -19,12 +18,11 @@ public class TestSimpleCircle
 		      + circle3.getRadius() + " is " + circle3.getArea());
 
 		    // Modify circle radius
-		    circle2.setRadius() = 100; // or circle2.setRadius(100)
+		    circle2.setRadius(100); // or circle2.setRadius(100)
 		    System.out.println("The area of the circle of radius "
 		      + circle2.getRadius() + " is " + circle2.getArea());
 		  }
 		}
-
 		// Define the circle class with two constructors
 		class SimpleCircle {
 		 private double radius;
@@ -49,12 +47,7 @@ public class TestSimpleCircle
 		    return 2 * radius * Math.PI;
 		  }
 
-		  /** Set a new radius for this circle */
-		  void setRadius(double newRadius) {
-		    radius = newRadius;
-		    
-		    
-		  }
+		
 		//getter for radius
 		  public double getRadius() 
 		    {
