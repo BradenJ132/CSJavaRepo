@@ -16,34 +16,52 @@ public class L13AnimalShelter
 		int numberAnimals = animalAmountEntry(input);
 		//end 
 	
-		//calls animal name 
+		//initializes animalNames array and calls animal entry method while passing input and the array
 		String animalNames [] = new String [numberAnimals];
 		animalNameEntry(input, animalNames);
 		//end
 		
-		//animal weight entry
+		//initalizes animalweights array and calls animalweight entry method
 		double animalWeights [] = new double[numberAnimals];
 		animalweightentry(input, animalWeights);
 		//end 
+		
+		//initializes daily food amounts array and calls food entry method
 		double dailyFoodAmounts [] = new double [numberAnimals];	
 		animalDailyFoodEntry(dailyFoodAmounts, input);
-		
+		//end
+
+		//initalizes weeeklyfood array and calls weeklyfood calculation method
 		double individualWeeklyFood[] = new double [numberAnimals];
 		individualAnimalWeeklyFood(dailyFoodAmounts, individualWeeklyFood);
-		
+		//end
+
+		//initalizes weight category array and calls weight class method
 		String animalWeightCategory [] = new String [numberAnimals];
 		weightClass(animalWeightCategory, animalWeights, input);
+		//end
+
+		//calls animal info method
 		animalInfoPrint(animalNames, animalWeights, animalWeightCategory, dailyFoodAmounts, individualWeeklyFood);
-		
+		//end
+
+		//calls totalweeklyfood display method
 		totalWeeklyFood(individualWeeklyFood);
+		//end
+		
+		//calls daily food average calc method
 		double dailyFoodAverage = averageDailyFood(dailyFoodAmounts);
+		//end
+	
+		//calls display above average method
 		displayAboveAverage(animalNames, dailyFoodAmounts, dailyFoodAverage);
+		//end
 		
 		input.close();
-	
-	
 	}
 //main method end 
+	
+	//display above average method
 	public static void displayAboveAverage(String animalNames[], double dailyFoodAmounts[], double dailyFoodAverage)
 	{
 		for(int index = 0; index < animalNames.length; index++)
@@ -54,6 +72,9 @@ public class L13AnimalShelter
 					}
 		}
 	}
+	//end
+
+	//average daily food method
 	public static double averageDailyFood(double dailyFoodAmounts [])
 	{
 		double total = 0;
@@ -66,6 +87,9 @@ public class L13AnimalShelter
 		return average;
 		
 	}
+	//end
+
+	//weekly food method
 	public static void totalWeeklyFood(double weeklyFood[])
 	{
 		double total = 0;
@@ -75,7 +99,9 @@ public class L13AnimalShelter
 		}
 		System.out.print("The total weekly food is " + total + " cups");
 	}
-	
+	//end
+
+	//animal info print method
 	public static void animalInfoPrint(String animalNames[], double animalWeights[], String animalWeightCategory[], double dailyFoodAmounts[], double individualWeeklyFood[])
 	{
 		for( int index = 0; index < animalNames.length; index++)
@@ -89,6 +115,8 @@ public class L13AnimalShelter
 		}
 		
 	}
+	//end
+
 	//summary display method
 	public static void summarydisplay(Scanner input)
 	{
@@ -158,6 +186,8 @@ public class L13AnimalShelter
 		}
 	}
 	//end of weight entry method
+	
+	
 	//start of daily food entry method
 	public static void animalDailyFoodEntry(double currentDailyFoodAmount[], Scanner input)
 	{
@@ -176,6 +206,8 @@ public class L13AnimalShelter
 		
 	}
 	//end of food entry method
+	
+	
 	//weekly food calculation method
 	public static void individualAnimalWeeklyFood(double currentDailyFoodAmounts[], double WeeklyFood[])
 	{
@@ -188,6 +220,7 @@ public class L13AnimalShelter
 	}
 	//end of week food calc method
 	
+	//weight class method
 	public static void weightClass(String animalWeightCategory [], double animalWeights [], Scanner input)
 	{
 		for (int index = 0; index < animalWeights.length; index++ )
@@ -210,7 +243,9 @@ public class L13AnimalShelter
 		}
 	}
 	}
+//end
 
+//check double method
 public static double checkValidDouble(double checkVariable, Scanner input)
 {
 	boolean validInput;
@@ -239,6 +274,9 @@ public static double checkValidDouble(double checkVariable, Scanner input)
 	}
 	return checkVariable;
 }
+//end
+
+//check integer method
 public static int checkvalidInteger(int checkVariable, Scanner input)
 {
 	boolean validInput;
@@ -275,4 +313,6 @@ System.out.println("how many animals are in the shelter?");
 	input.nextLine();
 	return numberAnimals;
 }
+//end
 }
+//end of class
