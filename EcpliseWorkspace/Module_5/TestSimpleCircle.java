@@ -3,7 +3,8 @@ public class TestSimpleCircle
 {
 	 public static void main(String[] args) {
 		    // Create a circle with radius 1
-		   SimpleRectangle rect1 = new SimpleRectangle(24, 24);
+		 SimpleRectangle rectangle[] = new SimpleRectangle[2];
+		 SimpleRectangle rect1 = new SimpleRectangle(24, 24);
 		   System.out.println(rect1.getLength() + " " +  rect1.getWidth());
 		 
 		   double incomingLength = 40;
@@ -12,25 +13,7 @@ public class TestSimpleCircle
 		 rect1.setWidth(incomingWidth);
 		 
 		 System.out.println(rect1.getLength() + " " +  rect1.getWidth());
-		
-		 SimpleCircle circle1 = new SimpleCircle();
-		    System.out.println("The area of the circle of radius "
-		      + circle1.getRadius() + " is " + circle1.getArea());
-
-		    // Create a circle with radius 25
-		    SimpleCircle circle2 = new SimpleCircle(25);
-		    System.out.println("The area of the circle of radius "
-		      + circle2.getRadius() + " is " + circle2.getArea());
-
-		    // Create a circle with radius 125
-		    SimpleCircle circle3 = new SimpleCircle(125);
-		    System.out.println("The area of the circle of radius "
-		      + circle3.getRadius() + " is " + circle3.getArea());
-
-		    // Modify circle radius
-		    circle2.setRadius(100); // or circle2.setRadius(100)
-		    System.out.println("The area of the circle of radius "
-		      + circle2.getRadius() + " is " + circle2.getArea());
+		 
 		  }
 		}
 	
@@ -40,7 +23,7 @@ public class TestSimpleCircle
 // Define the circle class with two constructors
 		class SimpleCircle {
 		 private double radius;
-
+		 
 		  /** Construct a circle with radius 1 */
 		  SimpleCircle() {
 		    radius = 1;
@@ -89,6 +72,7 @@ public class TestSimpleCircle
 		{
 			this.length = length;
 			this.width = width;
+			
 		}
 		
 		
@@ -129,5 +113,7 @@ public class TestSimpleCircle
 			double perimeter = (width * 2) + (length * 2);
 			return perimeter;
 		}
+	
+
 }		
 //end of SimpleRectangle class
