@@ -3,7 +3,17 @@ public class TestSimpleCircle
 {
 	 public static void main(String[] args) {
 		    // Create a circle with radius 1
-		    SimpleCircle circle1 = new SimpleCircle();
+		   SimpleRectangle rect1 = new SimpleRectangle(24, 24);
+		   System.out.println(rect1.getLength() + " " +  rect1.getWidth());
+		 
+		   double incomingLength = 40;
+		 double incomingWidth = 90;
+		 rect1.setLength(incomingLength);
+		 rect1.setWidth(incomingWidth);
+		 
+		 System.out.println(rect1.getLength() + " " +  rect1.getWidth());
+		
+		 SimpleCircle circle1 = new SimpleCircle();
 		    System.out.println("The area of the circle of radius "
 		      + circle1.getRadius() + " is " + circle1.getArea());
 
@@ -23,7 +33,11 @@ public class TestSimpleCircle
 		      + circle2.getRadius() + " is " + circle2.getArea());
 		  }
 		}
-		// Define the circle class with two constructors
+	
+
+
+
+// Define the circle class with two constructors
 		class SimpleCircle {
 		 private double radius;
 
@@ -58,7 +72,62 @@ public class TestSimpleCircle
 		  public void setRadius(double incomingRadius)
 		  {
 			  radius = incomingRadius;
-		  }
-		 
-		    
+		  }	    
 }
+		
+		
+//SimpleRectangle Class
+		class SimpleRectangle {
+
+		//rectangle data fields.
+		private double length;
+		private double width;
+
+		//rectangle constructor.
+		SimpleRectangle(double length, double width)
+		
+		{
+			this.length = length;
+			this.width = width;
+		}
+		
+		
+		//getter for length
+		public double getLength()
+		{
+			return length;
+		}
+		
+		//setter for length
+		public void setLength(double incomingLength)
+		{
+			this.length = incomingLength;
+		}
+
+		//setter for width
+		public void setWidth(double incomingWidth)
+		{
+			this.width = incomingWidth;
+		}
+		
+		//getter for width
+		public double getWidth()
+		{
+		return width;
+		}
+		
+		//get area method
+		public double getArea()
+		{
+			double area = width * length;
+			return area;
+		}
+		
+		//get perimeter method
+		public double getPerimteter()
+		{
+			double perimeter = (width * 2) + (length * 2);
+			return perimeter;
+		}
+}		
+//end of SimpleRectangle class

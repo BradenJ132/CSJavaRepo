@@ -187,7 +187,7 @@ public class L13AnimalShelter
 	}
 	//end of weight entry method
 	
-	
+	 
 	//start of daily food entry method
 	public static void animalDailyFoodEntry(double currentDailyFoodAmount[], Scanner input)
 	{
