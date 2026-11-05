@@ -83,7 +83,7 @@ public class L13AnimalShelter
 			total = total + dailyFoodAmounts[index];
 		}
 		double average = total / dailyFoodAmounts.length;
-		System.out.println("the average daily Food is " + average + " cups");
+		System.out.println(" the average daily Food is " + average + " cups");
 		return average;
 		
 	}
@@ -97,7 +97,7 @@ public class L13AnimalShelter
 		{
 			total += weeklyFood[index];
 		}
-		System.out.print("The total weekly food is " + total + " cups");
+		System.out.println("The total weekly food is " + total + " cups");
 	}
 	//end
 
@@ -107,6 +107,7 @@ public class L13AnimalShelter
 		for( int index = 0; index < animalNames.length; index++)
 		{
 			System.out.println(animalNames[index]);
+			System.out.println("");
 			System.out.println(animalWeights[index]);
 			System.out.println(animalWeightCategory[index]);
 			System.out.println(dailyFoodAmounts[index]);

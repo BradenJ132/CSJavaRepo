@@ -5,7 +5,8 @@ public class TestSimpleCircle
 		    // Create a circle with radius 1
 		 SimpleRectangle rectangle[] = new SimpleRectangle[2];
 		 SimpleRectangle rect1 = new SimpleRectangle(24, 24);
-		   System.out.println(rect1.getLength() + " " +  rect1.getWidth());
+		  
+		 System.out.println(rect1.getLength() + " " +  rect1.getWidth());
 		 
 		   double incomingLength = 40;
 		 double incomingWidth = 90;
