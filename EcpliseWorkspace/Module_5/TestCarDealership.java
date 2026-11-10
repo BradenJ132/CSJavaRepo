@@ -7,6 +7,8 @@ public class TestCarDealership
 	public static void main(String[] args)
 	{
 		Dealership jerrys = new Dealership("jerrys", 3);
+		Car car1 = new Car("subaru", "impreza", 2000);
+		Dealership.addCar(car1);
 		
 	}
 //end main
@@ -20,24 +22,26 @@ class Car
 	private String carMake;
 	private String carModel;
 	private double carPrice;
-	
 	public Car(String carMake, String carModel, double carPrice)
 	{
 		this.carMake = carMake;
 		this.carModel = carModel;
 		this.carPrice = carPrice;
+		
+		
+		
 	}
-	
+	//getter for car make
 	public String getCarMake()
 	{
 		return carMake;
 	}
-	
+	//getter for car model
 	public String getCarModel()
 	{
 		return carModel;
 	}
-	
+	//getter for car price 
 	public double getCarPrice()
 	{
 		return carPrice;
@@ -50,15 +54,49 @@ class Car
 class Dealership
 //Start Dealership Class
 {
-	private String dealershipName;
-	private int maxLotCapacity;
-	private int numberOfCars;
-	private Car cars[] = new Car[numberOfCars];
+	private String name;
+	private int currentNumberCars;
+	private Car cars[];
 	
-	public Dealership(String dealershipName, int numberOfCars)
+	
+	public Dealership(String dealershipName, int maxNumberCars)
 	{
-		this.dealershipName = dealershipName;
-		this.numberOfCars = numberOfCars;
+		this.name = dealershipName;
+		cars = new Car[maxNumberCars];
+		
+	}
+	
+	public String getDealershipName()
+
+	{
+		return name;
+	}
+	
+	public void addCar(Car newcar)
+	{
+		if (currentNumberCars < cars.length)
+		{
+			cars[currentNumberCars] = newcar;
+		}
+		else
+		{
+			System.out.println("ERROR - Maximum capcity reached");
+		}
+	}
+	
+	public void displayMostExpensive()
+	{
+		
+	}
+	
+	public void displayCars()
+	{
+		
+	}
+	
+	public void writeCarsToFile()
+	{
+		
 	}
 }
 //End Dealership Class

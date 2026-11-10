@@ -21,6 +21,7 @@ public class L13AnimalShelter
 		animalNameEntry(input, animalNames);
 		//end
 		
+<<<<<<< Updated upstream
 		//initalizes animalweights array and calls animalweight entry method
 		double animalWeights [] = new double[numberAnimals];
 		animalweightentry(input, animalWeights);
@@ -32,6 +33,17 @@ public class L13AnimalShelter
 		//end
 
 		//initalizes weeeklyfood array and calls weeklyfood calculation method
+=======
+		//initializes animalWeights array and calls the animalweightentry method
+		double animalWeights [] = new double[numberAnimals];
+		animalweightentry(input, animalWeights);
+		//end
+		
+		//initializes daily food amounts array and calls the animaldailyfood entry method
+		double dailyFoodAmounts [] = new double [numberAnimals];	
+		animalDailyFoodEntry(dailyFoodAmounts, input);
+		//end
+>>>>>>> Stashed changes
 		double individualWeeklyFood[] = new double [numberAnimals];
 		individualAnimalWeeklyFood(dailyFoodAmounts, individualWeeklyFood);
 		//end
@@ -51,9 +63,13 @@ public class L13AnimalShelter
 		
 		//calls daily food average calc method
 		double dailyFoodAverage = averageDailyFood(dailyFoodAmounts);
+<<<<<<< Updated upstream
 		//end
 	
 		//calls display above average method
+=======
+		
+>>>>>>> Stashed changes
 		displayAboveAverage(animalNames, dailyFoodAmounts, dailyFoodAverage);
 		//end
 		
@@ -314,6 +330,10 @@ System.out.println("how many animals are in the shelter?");
 	input.nextLine();
 	return numberAnimals;
 }
+<<<<<<< Updated upstream
 //end
+=======
+
+>>>>>>> Stashed changes
 }
 //end of class

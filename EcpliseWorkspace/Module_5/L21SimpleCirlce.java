@@ -45,9 +45,15 @@ public class L21SimpleCirlce
 		}
 
 		// fix the code below.
+<<<<<<< Updated upstream
 		public SimpleCircle(double radius)
 		{
 			this.radius = radius;
+=======
+		public SimpleCircle(double incomingRadius)
+		{
+			radius = incomingRadius;
+>>>>>>> Stashed changes
 			numberOfObjects++;
 		}
 
@@ -57,9 +63,15 @@ public class L21SimpleCirlce
 		}
 
 		// fix the code below.
+<<<<<<< Updated upstream
 		public void setRadius(double radius)
 		{
 			this.radius = radius;
+=======
+		public void setRadius(double incomingRadius)
+		{
+			radius = incomingRadius;
+>>>>>>> Stashed changes
 		}
 
 		public double getArea()
