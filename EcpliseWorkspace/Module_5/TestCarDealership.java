@@ -88,7 +88,7 @@ class Car
 	{
 		return carPrice;
 	}
-	
+	//display all car details method
 	public void displayCarDetails()
 	{
 		System.out.println(getCarMake() + " " + getCarModel() + " " + getCarPrice());
@@ -106,20 +106,20 @@ class Dealership
 	private int currentNumberCars;
 	private Car cars[];
 	
-	
+	//dealership contructer 
 	public Dealership(String dealershipName, int maxNumberCars)
 	{
 		this.name = dealershipName;
 		cars = new Car[maxNumberCars];
 		
 	}
-	
+	//getter for dealership name
 	public String getDealershipName()
 
 	{
 		return name;
 	}
-	
+	//add car method 
 	public void addCar(Car newCar)
 	{
 		if (currentNumberCars < cars.length)
@@ -132,7 +132,7 @@ class Dealership
 			System.out.println("ERROR - Maximum capcity reached");
 		}
 	}
-	
+	// display most expensive car method 
 	public void displayMostExpensiveCar()
 	{
 		Car mostExpensive = cars[0];
@@ -148,7 +148,7 @@ class Dealership
 			
 		
 	}
-	
+	//display cars method 
 	public void displayCars()
 	{
 		for(int index = 0; index < currentNumberCars; index++)
@@ -158,7 +158,7 @@ class Dealership
 		}
 		
 	}
-	
+	//write cars to file method
 	public void writeCarsToFile(String fileName)
 	{
 		
