@@ -1,4 +1,7 @@
-
+import java.util.Scanner;
+import java.io.File;
+import java.io.PrintWriter;
+import java.io.FileNotFoundException;
 public class TestCarDealership
 {
 //start main
@@ -6,10 +9,49 @@ public class TestCarDealership
 
 	public static void main(String[] args)
 	{
-		Dealership jerrys = new Dealership("jerrys", 3);
-		Car car1 = new Car("subaru", "impreza", 2000);
-		Dealership.addCar(car1);
-		
+		displayProgramSummary();
+		String fileName = "cars1.txt";
+		try
+		{
+			System.out.println("\nTesting file: " + fileName);
+			Dealership dealership = new Dealership("CS Dealership", 6);
+			dealershipSetUp(fileName, dealership);
+			dealership.displayCars();
+			System.out.println("\nMost Expensive Car:");
+			dealership.displayMostExpensiveCar();
+			String outputFileName = dealership.getDealershipName() + ".txt";
+			dealership.writeCarsToFile(outputFileName);
+		} catch (FileNotFoundException exception)
+		{
+			System.out.println("Error: Unable to find file " + fileName);
+		}
+		System.out.println("\nEnd of program");
+	}
+	public static void dealershipSetUp(String fileName, Dealership newDealership) throws FileNotFoundException
+	{
+		File inputFile = new File(fileName);
+		Scanner fileScanner = new Scanner(inputFile);
+		while (fileScanner.hasNext())
+		{
+			String make = fileScanner.next();
+			String model = fileScanner.next();
+			double price = fileScanner.nextDouble();
+			Car car = new Car(make, model, price);
+			newDealership.addCar(car);
+		}
+		fileScanner.close();
+	}
+	public static void displayProgramSummary()
+	{
+		System.out.println("**************************************");
+		System.out.println("Dealership and Car Analysis");
+		System.out.println("**************************************");
+		System.out.println("Reads car data from a file");
+		System.out.println("Displays all cars");
+		System.out.println("Finds most expensive car");
+		System.out.println();
+
+
 	}
 //end main
 	
@@ -46,6 +88,12 @@ class Car
 	{
 		return carPrice;
 	}
+	
+	public void displayCarDetails()
+	{
+		System.out.println(getCarMake() + " " + getCarModel() + " " + getCarPrice());
+	}
+	
 }
 //end Car Class
 
@@ -72,11 +120,12 @@ class Dealership
 		return name;
 	}
 	
-	public void addCar(Car newcar)
+	public void addCar(Car newCar)
 	{
 		if (currentNumberCars < cars.length)
 		{
-			cars[currentNumberCars] = newcar;
+			cars[currentNumberCars] = newCar;
+			currentNumberCars++;
 		}
 		else
 		{
@@ -84,20 +133,37 @@ class Dealership
 		}
 	}
 	
-	public void displayMostExpensive()
+	public void displayMostExpensiveCar()
 	{
+		Car mostExpensive = cars[0];
+		for(int index = 0; index < currentNumberCars; index++)
+		{
+			if (cars[index].getCarPrice() > mostExpensive.getCarPrice())
+			{
+				 mostExpensive = cars[index];
+			}
+		}
+			mostExpensive.displayCarDetails();
+			
+			
 		
 	}
 	
 	public void displayCars()
 	{
+		for(int index = 0; index < currentNumberCars; index++)
+		{
+			
+			cars[index].displayCarDetails();
+		}
 		
 	}
 	
-	public void writeCarsToFile()
+	public void writeCarsToFile(String fileName)
 	{
 		
-	}
+	}	
+	
 }
 //End Dealership Class
 

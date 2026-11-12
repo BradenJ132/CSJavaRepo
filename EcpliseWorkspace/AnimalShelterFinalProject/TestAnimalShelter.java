@@ -4,8 +4,24 @@ public class TestAnimalShelter
 
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
+		
 
 	}
 
+
 }
+//Start Animal Class
+class Animal
+{
+	
+}
+//End Animal Class
+
+
+
+//Start Shelter Class
+class Shelter
+{
+	
+}
+//End Shelter Class

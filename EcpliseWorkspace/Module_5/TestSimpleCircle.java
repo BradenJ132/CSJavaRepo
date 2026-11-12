@@ -3,7 +3,7 @@ public class TestSimpleCircle
 {
 	 public static void main(String[] args) {
 		    // Create a circle with radius 1
-<<<<<<< Updated upstream
+
 		 SimpleRectangle rectangle[] = new SimpleRectangle[2];
 		 SimpleRectangle rect1 = new SimpleRectangle(24, 24);
 		  
@@ -16,7 +16,7 @@ public class TestSimpleCircle
 		 
 		 System.out.println(rect1.getLength() + " " +  rect1.getWidth());
 		 
-=======
+
 		    SimpleCircle circle1 = new SimpleCircle();
 		    System.out.println("The area of the circle of radius "
 		      + circle1.getRadius() + " is " + circle1.getArea());
